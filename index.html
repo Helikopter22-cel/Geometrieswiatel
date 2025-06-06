@@ -46,17 +46,16 @@
       text-overflow: ellipsis;
     }
 
-    /* Modal styles */
     .modal {
-      display: none; 
-      position: fixed; 
-      z-index: 1000; 
-      padding-top: 60px; 
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
       left: 0;
       top: 0;
-      width: 100%; 
-      height: 100%; 
-      overflow: auto; 
+      width: 100%;
+      height: 100%;
+      overflow: auto;
       background-color: rgba(0,0,0,0.8);
     }
     .modal-content {
@@ -70,7 +69,7 @@
       animation-duration: 0.3s;
     }
     @keyframes zoom {
-      from {transform: scale(0.7);} 
+      from {transform: scale(0.7);}
       to {transform: scale(1);}
     }
     .modal-caption {
@@ -92,38 +91,24 @@
     }
     .close:hover {
       color: #bbb;
-    }<script>
-function openModal(imageSrc, captionText) {
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImage");
-  const caption = document.getElementById("modalCaption");
-  
-  modal.style.display = "block";
-  modalImg.src = imageSrc;
-  caption.innerText = captionText;
-}
-
-function closeModal() {
-  document.getElementById("imageModal").style.display = "none";
-}
-</script>
+    }
   </style>
 </head>
 <body>
-    <section id="about" style="margin-top: 50px; padding: 20px; background-color: #f2f2f2; border-radius: 8px;">
-  <h2>O mnie</h2>
-  <p>Cześć! Jestem Hela, stdentka, a może już absolewntka Malarstwa. Tworzę obrazy, które dążą do wizualnej harmonii i spokoju. Pozwalają spojrzeć troche inaczej na codzienną rzeczywistość. Zapraszam do zapoznania się z moją galerią!</p>
-</section>
+  <h1 class="title">Geometrie Świateł - wystawa dyplomowa - Helena Marianna Nowakowska</h1>
 
-<body>
-    <h1 class="title">Geometrie Świateł - wystawa dyplomowa - Helena Marianna Nowakowska</h1>
-  <div class="tile">
+  <section id="about" style="margin-top: 50px; padding: 20px; background-color: #f2f2f2; border-radius: 8px;">
+    <h2>O mnie</h2>
+    <p>Cześć! Jestem Hela, studentka, a może już absolwentka Malarstwa. Tworzę obrazy, które dążą do wizualnej harmonii i spokoju. Pozwalają spojrzeć trochę inaczej na codzienną rzeczywistość. Zapraszam do zapoznania się z moją galerią!</p>
+  </section>
+
   <section class="gallery">
-  <div class="tile" onclick="openModal('images/obraz1.jpg', 'W rytmie I, 2024, olej na płótnie, 180 x 60 cm')">
-    <img src="images/obraz1.jpg" alt="W rytmie I" />
-    <p class="caption">W rytmie I, 2024, olej na płótnie, 180 x 60 cm</p>
-  </div>
-  <div class="tile" onclick="openModal('images/obraz2.jpg', 'W rytmie II, 2025, olej na płótnie, 180 x 60 cm')">
+    <!-- Powtórz ten div.tile dla każdego obrazu -->
+    <div class="tile" onclick="openModal('images/obraz1.jpg', 'W rytmie I, 2024, olej na płótnie, 180 x 60 cm')">
+      <img src="images/obraz1.jpg" alt="W rytmie I" />
+      <p class="caption">W rytmie I, 2024, olej na płótnie, 180 x 60 cm</p>
+    </div>
+<div class="tile" onclick="openModal('images/obraz2.jpg', 'W rytmie II, 2025, olej na płótnie, 180 x 60 cm')">
     <img src="images/obraz2.jpg" alt="W rytmie II" />
     <p class="caption">W rytmie II, 2025, olej na płótnie, 180 x 60 cm</p>
   </div>
@@ -187,62 +172,48 @@ function closeModal() {
     <img src="images/obraz17.jpg" alt="Tajemnicza skrzynka" />
     <p class="caption">Tajemnicza skrzynka, 2023/25, olej na płótnie, 150 x 100 cm</p>
   </div>
-  <div class="tile" onclick="openModal('images/obraz18.jpg', 'Realizacja projektu malarstwa ściennego w postaci makiety w skali 1:40 (60 x 40 x 50 cm)')">
-    <img src="images/obraz18.jpg" alt="Makieta malarstwa ściennego" />
-    <p class="caption">Realizacja projektu malarstwa ściennego w postaci makiety w skali 1:40 (60 x 40 x 50 cm)</p>
-  </div>
-      <div id="myModal" class="modal">
+    
+
+    <div class="tile" onclick="openModal('images/obraz18.jpg', 'Realizacja projektu malarstwa ściennego w postaci makiety w skali 1:40 (60 x 40 x 50 cm)')">
+      <img src="images/obraz18.jpg" alt="Makieta malarstwa ściennego" />
+      <p class="caption">Realizacja projektu malarstwa ściennego w postaci makiety w skali 1:40 (60 x 40 x 50 cm)</p>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
     <img class="modal-content" id="modalImg" />
     <div class="modal-caption" id="modalCaption"></div>
-        <!-- Modal -->
-<div id="imageModal" class="modal" style="display: none;">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImage" />
-  <div id="modalCaption" class="caption"></div>
-</div>
   </div>
 
-<script>
-  function openModal(src, caption) {
-    const modal = document.getElementById('myModal');
-    const modalImg = document.getElementById('modalImg');
-    const modalCaption = document.getElementById('modalCaption');
+  <footer class="contact" style="margin-top: 50px;">
+    <h2>Kontakt</h2>
+    <p>Chcesz się ze mną skontaktować? Napisz na: <a href="mailto:helena.nowakowska2000@gmail.com">helena.nowakowska2000@gmail.com</a></p>
+    <p>Telefon: +48 511 136 319</p>
+  </footer>
 
-    modal.style.display = "block";
-    modalImg.src = src;
-    modalCaption.textContent = caption;
-  }
+  <script>
+    function openModal(src, caption) {
+      const modal = document.getElementById('myModal');
+      const modalImg = document.getElementById('modalImg');
+      const modalCaption = document.getElementById('modalCaption');
 
-  function closeModal() {
-    document.getElementById('myModal').style.display = "none";
-  }
-
-  // Zamknij modal klikając poza zdjęciem
-  window.onclick = function(event) {
-    const modal = document.getElementById('myModal');
-    if (event.target === modal) {
-      closeModal();
+      modal.style.display = "block";
+      modalImg.src = src;
+      modalCaption.textContent = caption;
     }
-  }
-</script>
-</section>
-<footer class="contact">
-  <h2>Kontakt</h2>
-  <p>Chcesz się ze mną skontaktować? Napisz na: <a href="mailto:twoj.email@example.com">helena.nowakowska2000@gmail.com</a></p>
-  <p>Telefon: +48 511 136 319</p>
-</footer>
 
-    <!-- Modal -->
-    <div id="modal" class="modal" onclick="closeModal()">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modal-img" src="" alt="">
-            <h2 id="modal-title"></h2>
-            <p id="modal-desc"></p>
-        </div>
-    </div>
+    function closeModal() {
+      document.getElementById('myModal').style.display = "none";
+    }
 
-    <script src="script.js"></script>
+    window.onclick = function(event) {
+      const modal = document.getElementById('myModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  </script>
 </body>
 </html>
