@@ -93,33 +93,31 @@ header {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
   padding: 20px;
-  flex-grow: 1;
 }
 
 .tile {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
   text-align: center;
 }
 
 .tile img {
   width: 100%;
   height: auto;
-  display: block;
+  border-radius: 8px;
+}
+
+.tile:hover {
+  transform: scale(1.03);
 }
 
 .caption {
-  padding: 10px;
-  font-size: 0.9rem;
-  color: #555;
+  font-size: 0.9em;
+  margin-top: 8px;
+  color: #444;
 }
 
 .about {
