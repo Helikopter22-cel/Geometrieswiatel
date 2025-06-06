@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje Prace Malarskie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="title">Moje Prace Malarskie</h1>
+    <div class="gallery">
+        <!-- Kafelki z obrazami -->
+        <div class="tile" onclick="openModal('0', 'Tytuł obrazu 1', 'To jest opis obrazu numer 1.')">
+            <img src="images/obraz1.jpg" alt="Obraz 1">
+        </div>
+        <div class="tile" onclick="openModal('1', 'Tytuł obrazu 2', 'To jest opis obrazu numer 2.')">
+            <img src="images/obraz2.jpg" alt="Obraz 2">
+        </div>
+        <div class="tile" onclick="openModal('2', 'Tytuł obrazu 3', 'To jest opis obrazu numer 3.')">
+            <img src="images/obraz3.jpg" alt="Obraz 3">
+        </div>
+        <div class="tile" onclick="openModal('3', 'Tytuł obrazu 4', 'To jest opis obrazu numer 4.')">
+            <img src="images/obraz4.jpg" alt="Obraz 4">
+        </div>
+        <div class="tile" onclick="openModal('4', 'Tytuł obrazu 5', 'To jest opis obrazu numer 5.')">
+            <img src="images/obraz5.jpg" alt="Obraz 5">
+        </div>
+        <div class="tile" onclick="openModal('5', 'Tytuł obrazu 6', 'To jest opis obrazu numer 6.')">
+            <img src="images/obraz6.jpg" alt="Obraz 6">
+        </div>
+        <div class="tile" onclick="openModal('6', 'Tytuł obrazu 7', 'To jest opis obrazu numer 7.')">
+            <img src="images/obraz7.jpg" alt="Obraz 7">
+        </div>
+        <div class="tile" onclick="openModal('7', 'Tytuł obrazu 8', 'To jest opis obrazu numer 8.')">
+            <img src="images/obraz8.jpg" alt="Obraz 8">
+        </div>
+        <div class="tile" onclick="openModal('8', 'Tytuł obrazu 9', 'To jest opis obrazu numer 9.')">
+            <img src="images/obraz9.jpg" alt="Obraz 9">
+        </div>
+        <div class="tile" onclick="openModal('9', 'Tytuł obrazu 10', 'To jest opis obrazu numer 10.')">
+            <img src="images/obraz10.jpg" alt="Obraz 10">
+        </div>
+        <div class="tile" onclick="openModal('10', 'Tytuł obrazu 11', 'To jest opis obrazu numer 11.')">
+            <img src="images/obraz11.jpg" alt="Obraz 11">
+        </div>
+        <div class="tile" onclick="openModal('11', 'Tytuł obrazu 12', 'To jest opis obrazu numer 12.')">
+            <img src="images/obraz12.jpg" alt="Obraz 12">
+        </div>
+        <div class="tile" onclick="openModal('12', 'Tytuł obrazu 13', 'To jest opis obrazu numer 13.')">
+            <img src="images/obraz13.jpg" alt="Obraz 13">
+        </div>
+        <div class="tile" onclick="openModal('13', 'Tytuł obrazu 14', 'To jest opis obrazu numer 14.')">
+            <img src="images/obraz14.jpg" alt="Obraz 14">
+        </div>
+        <div class="tile" onclick="openModal('14', 'Tytuł obrazu 15', 'To jest opis obrazu numer 15.')">
+            <img src="images/obraz15.jpg" alt="Obraz 15">
+        </div>
+        <div class="tile" onclick="openModal('15', 'Tytuł obrazu 16', 'To jest opis obrazu numer 16.')">
+            <img src="images/obraz16.jpg" alt="Obraz 16">
+        </div>
+        <div class="tile" onclick="openModal('16', 'Tytuł obrazu 17', 'To jest opis obrazu numer 17.')">
+            <img src="images/obraz17.jpg" alt="Obraz 17">
+        </div>
+        <div class="tile" onclick="openModal('17', 'Tytuł obrazu 18', 'To jest opis obrazu numer 18.')">
+            <img src="images/obraz18.jpg" alt="Obraz 18">
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-img" src="" alt="">
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
