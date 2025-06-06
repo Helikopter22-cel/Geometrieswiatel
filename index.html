@@ -1,11 +1,101 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geometrie Świateł</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geometrie świateł</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      text-align: center;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .tile {
+      width: 120px;
+      cursor: pointer;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      background: white;
+      transition: transform 0.2s ease;
+    }
+    .tile:hover {
+      transform: scale(1.05);
+    }
+    .tile img {
+      width: 100%;
+      display: block;
+      height: 90px;
+      object-fit: cover;
+    }
+    .caption {
+      font-size: 12px;
+      padding: 5px 8px;
+      color: #666;
+      height: 50px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1000; 
+      padding-top: 60px; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+      animation-name: zoom;
+      animation-duration: 0.3s;
+    }
+    @keyframes zoom {
+      from {transform: scale(0.7);} 
+      to {transform: scale(1);}
+    }
+    .modal-caption {
+      margin: 15px auto;
+      color: #ddd;
+      font-size: 16px;
+      max-width: 90%;
+      text-align: center;
+    }
+    .close {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+    }
+    .close:hover {
+      color: #bbb;
+    }
+  </style>
 </head>
+<body>
     <section id="about" style="margin-top: 50px; padding: 20px; background-color: #f2f2f2; border-radius: 8px;">
   <h2>O mnie</h2>
   <p>Cześć! Jestem Hela, stdentka, a może już absolewntka Malarstwa. Tworzę obrazy, które dążą do wizualnej harmonii i spokoju. Pozwalają spojrzeć troche inaczej na codzienną rzeczywistość. Zapraszam do zapoznania się z moją galerią!</p>
@@ -14,77 +104,109 @@
 <body>
     <h1 class="title">Geometrie Świateł - wystawa dyplomowa - Helena Marianna Nowakowska</h1>
   <div class="tile">
-  <img src="images/obraz1.jpg" alt="W rytmie I" />
-  <p class="caption">W rytmie I, 2024, olej na płótnie, 180 x 60 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz2.jpg" alt="W rytmie II" />
-  <p class="caption">W rytmie II, 2025, olej na płótnie, 180 x 60 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz3.jpg" alt="W rytmie III" />
-  <p class="caption">W rytmie III, 2025, olej na płótnie, 180 x 60 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz4.jpg" alt="W rytmie IV" />
-  <p class="caption">W rytmie IV, 2025, olej na płótnie, 180 x 60 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz5.jpg" alt="W rytmie V" />
-  <p class="caption">W rytmie V, 2023, olej na płótnie, 100 x 120 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz6.jpg" alt="W rytmie VI" />
-  <p class="caption">W rytmie VI, 2025, olej na płótnie, 180 x 60 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz7.jpg" alt="W rytmie światła" />
-  <p class="caption">W rytmie światła, 2024, olej na płótnie, dyptyk format jednego modułu: 100 x 50 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz8.jpg" alt="W rytmie światła" />
-  <p class="caption">W rytmie światła, 2024, olej na płótnie, dyptyk format jednego modułu: 100 x 50 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz9.jpg" alt="Poziomy" />
-  <p class="caption">Poziomy, 2024, olej na płótnie, format jednego modułu: 30 x 90 cm, obiekt - graniastosłup o podstawie trójkąta</p>
-</div>
-<div class="tile">
-  <img src="images/obraz10.jpg" alt="Ciepło popołudnia" />
-  <p class="caption">Ciepło popołudnia, 2025, olej na płótnie bez krosna, 82 x 200 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz11.jpg" alt="Architektura światła" />
-  <p class="caption">Architektura światła, 2025, olej na płótnie bez krosna, 124 x 210 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz12.jpg" alt="Światłoczułe II" />
-  <p class="caption">Światłoczułe II, 2025, olej na płótnie, 180 x 60 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz13.jpg" alt="Światłoczułe V" />
-  <p class="caption">Światłoczułe V, 2025, olej na płótnie, 160 x 200 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz14.jpg" alt="Światłoczułe I" />
-  <p class="caption">Światłoczułe I, 2025, olej na płótnie, 180 x 60 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz15.jpg" alt="Światłoczułe IV" />
-  <p class="caption">Światłoczułe IV, 2025, olej na płótnie, 120 x 200 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz16.jpg" alt="Światłoczułe III" />
-  <p class="caption">Światłoczułe III, 2025, olej na płótnie, 125 x 210 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz17.jpg" alt="Tajemnicza skrzynka" />
-  <p class="caption">Tajemnicza skrzynka, 2023/25, olej na płótnie, 150 x 100 cm</p>
-</div>
-<div class="tile">
-  <img src="images/obraz18.jpg" alt="Makieta malarstwa ściennego" />
-  <p class="caption">Realizacja projektu malarstwa ściennego w postaci makiety w skali 1:40 (wymiary 60 x 40 x 50 cm)</p>
-</div>
+  <section class="gallery">
+  <div class="tile" onclick="openModal('images/obraz1.jpg', 'W rytmie I, 2024, olej na płótnie, 180 x 60 cm')">
+    <img src="images/obraz1.jpg" alt="W rytmie I" />
+    <p class="caption">W rytmie I, 2024, olej na płótnie, 180 x 60 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz2.jpg', 'W rytmie II, 2025, olej na płótnie, 180 x 60 cm')">
+    <img src="images/obraz2.jpg" alt="W rytmie II" />
+    <p class="caption">W rytmie II, 2025, olej na płótnie, 180 x 60 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz3.jpg', 'W rytmie III, 2025, olej na płótnie, 180 x 60 cm')">
+    <img src="images/obraz3.jpg" alt="W rytmie III" />
+    <p class="caption">W rytmie III, 2025, olej na płótnie, 180 x 60 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz4.jpg', 'W rytmie IV, 2025, olej na płótnie, 180 x 60 cm')">
+    <img src="images/obraz4.jpg" alt="W rytmie IV" />
+    <p class="caption">W rytmie IV, 2025, olej na płótnie, 180 x 60 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz5.jpg', 'W rytmie V, 2023, olej na płótnie, 100 x 120 cm')">
+    <img src="images/obraz5.jpg" alt="W rytmie V" />
+    <p class="caption">W rytmie V, 2023, olej na płótnie, 100 x 120 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz6.jpg', 'W rytmie VI, 2025, olej na płótnie, 180 x 60 cm')">
+    <img src="images/obraz6.jpg" alt="W rytmie VI" />
+    <p class="caption">W rytmie VI, 2025, olej na płótnie, 180 x 60 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz7.jpg', 'W rytmie światła, 2024, olej na płótnie, dyptyk format jednego modułu: 100 x 50 cm')">
+    <img src="images/obraz7.jpg" alt="W rytmie światła" />
+    <p class="caption">W rytmie światła, 2024, olej na płótnie, dyptyk format jednego modułu: 100 x 50 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz8.jpg', 'W rytmie światła, 2024, olej na płótnie, dyptyk format jednego modułu: 100 x 50 cm')">
+    <img src="images/obraz8.jpg" alt="W rytmie światła" />
+    <p class="caption">W rytmie światła, 2024, olej na płótnie, dyptyk format jednego modułu: 100 x 50 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz9.jpg', 'Poziomy, 2024, olej na płótnie, format jednego modułu: 30 x 90 cm, obiekt - graniastosłup o podstawie trójkąta')">
+    <img src="images/obraz9.jpg" alt="Poziomy" />
+    <p class="caption">Poziomy, 2024, olej na płótnie, format jednego modułu: 30 x 90 cm, obiekt - graniastosłup o podstawie trójkąta</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz10.jpg', 'Ciepło popołudnia, 2025, olej na płótnie bez krosna, 82 x 200 cm')">
+    <img src="images/obraz10.jpg" alt="Ciepło popołudnia" />
+    <p class="caption">Ciepło popołudnia, 2025, olej na płótnie bez krosna, 82 x 200 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz11.jpg', 'Architektura światła, 2025, olej na płótnie bez krosna, 124 x 210 cm')">
+    <img src="images/obraz11.jpg" alt="Architektura światła" />
+    <p class="caption">Architektura światła, 2025, olej na płótnie bez krosna, 124 x 210 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz12.jpg', 'Światłoczułe II, 2025, olej na płótnie, 180 x 60 cm')">
+    <img src="images/obraz12.jpg" alt="Światłoczułe II" />
+    <p class="caption">Światłoczułe II, 2025, olej na płótnie, 180 x 60 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz13.jpg', 'Światłoczułe V, 2025, olej na płótnie, 160 x 200 cm')">
+    <img src="images/obraz13.jpg" alt="Światłoczułe V" />
+    <p class="caption">Światłoczułe V, 2025, olej na płótnie, 160 x 200 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz14.jpg', 'Światłoczułe I, 2025, olej na płótnie, 180 x 60 cm')">
+    <img src="images/obraz14.jpg" alt="Światłoczułe I" />
+    <p class="caption">Światłoczułe I, 2025, olej na płótnie, 180 x 60 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz15.jpg', 'Światłoczułe IV, 2025, olej na płótnie, 120 x 200 cm')">
+    <img src="images/obraz15.jpg" alt="Światłoczułe IV" />
+    <p class="caption">Światłoczułe IV, 2025, olej na płótnie, 120 x 200 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz16.jpg', 'Światłoczułe III, 2025, olej na płótnie, 125 x 210 cm')">
+    <img src="images/obraz16.jpg" alt="Światłoczułe III" />
+    <p class="caption">Światłoczułe III, 2025, olej na płótnie, 125 x 210 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz17.jpg', 'Tajemnicza skrzynka, 2023/25, olej na płótnie, 150 x 100 cm')">
+    <img src="images/obraz17.jpg" alt="Tajemnicza skrzynka" />
+    <p class="caption">Tajemnicza skrzynka, 2023/25, olej na płótnie, 150 x 100 cm</p>
+  </div>
+  <div class="tile" onclick="openModal('images/obraz18.jpg', 'Realizacja projektu malarstwa ściennego w postaci makiety w skali 1:40 (60 x 40 x 50 cm)')">
+    <img src="images/obraz18.jpg" alt="Makieta malarstwa ściennego" />
+    <p class="caption">Realizacja projektu malarstwa ściennego w postaci makiety w skali 1:40 (60 x 40 x 50 cm)</p>
+  </div>
+      <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg" />
+    <div class="modal-caption" id="modalCaption"></div>
+  </div>
+
+<script>
+  function openModal(src, caption) {
+    const modal = document.getElementById('myModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalCaption = document.getElementById('modalCaption');
+
+    modal.style.display = "block";
+    modalImg.src = src;
+    modalCaption.textContent = caption;
+  }
+
+  function closeModal() {
+    document.getElementById('myModal').style.display = "none";
+  }
+
+  // Zamknij modal klikając poza zdjęciem
+  window.onclick = function(event) {
+    const modal = document.getElementById('myModal');
+    if (event.target === modal) {
+      closeModal();
+    }
+  }
+</script>
+</section>
 <footer class="contact">
   <h2>Kontakt</h2>
   <p>Chcesz się ze mną skontaktować? Napisz na: <a href="mailto:twoj.email@example.com">helena.nowakowska2000@gmail.com</a></p>
